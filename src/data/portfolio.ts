@@ -1,5 +1,5 @@
 /**
- * Central portfolio data — generated from Sushmita's resume (Sushmita_dasari.pdf).
+ * Central portfolio data for Deepak's portfolio.
  * Every fact on the site comes from this file. Update it here and the whole site follows.
  * Nothing here should be added unless it appears on the resume.
  */
@@ -7,29 +7,29 @@
 export type Palette = { from: string; via: string; to: string; accent: string };
 
 export const profile = {
-  fullName: 'Dasari Venkata Ratna Sri Sushmita',
-  displayName: 'Sushmita Dasari',
-  firstName: 'SUSHMITA',
-  seriesTag: 'THE SERIES',
+  fullName: 'Deepak R Jagalur',
+  displayName: 'Deepak R Jagalur',
+  firstName: 'DEEPAK R JAGALUR',
+  seriesTag: 'GROWTH. STRATEGY. REVENUE.',
   /** Fictional studio card shown at the very start of the opening sequence. */
-  originalLabel: 'A DASARI ORIGINAL',
-  role: 'Full-Stack Developer',
-  tagline: ['Full-Stack Developer', 'AI / ML', 'Java'],
-  intro:
-    'A B.Tech Artificial Intelligence & Machine Learning student (CGPA 9.10) and full-stack developer building AI-powered platforms, payment systems and multi-tenant SaaS with Java, Python, React, Node.js and Docker.',
-  location: 'Surampalem, Andhra Pradesh',
-  email: 'sushmitadasari17@gmail.com',
+  originalLabel: 'A GROWTH LEADERSHIP PROFILE',
+  role: 'Business Growth & Sales Leader',
+  tagline: ['SaaS & IT Sales', 'Customer Success', 'Account Management', 'Retention & Renewals', 'Marketing Automation'],
+  intro: 'Business Growth & Sales Leader with experience spanning financial services, investment distribution, and client growth. Focused on building strong teams, lasting customer relationships, and sustainable revenue.',
+  location: '',
+  phone: '+91 98442 58258',
+  email: 'deepak.insightra@gmail.com',
   links: {
-    linkedin: 'https://www.linkedin.com/in/sushmita-dasari-227a40284/',
-    github: 'https://github.com/Sushmitadasari',
+    linkedin: 'https://www.linkedin.com/in/deepakjagalur/',
+    github: '',
   },
-  resumePdf: '/assets/Sushmita_Dasari_Resume.pdf',
+  resumePdf: '',
   portrait: {
-    src: '/assets/portrait-720.webp',
-    srcSet: '/assets/portrait-420.webp 420w, /assets/portrait-720.webp 720w, /assets/portrait-1100.webp 1100w',
-    alt: 'Portrait of Sushmita Dasari',
+    src: '/LOGO%20AND%20PHOTOS/deepak-primary.png',
+    srcSet: '',
+    alt: 'Deepak R Jagalur – Business Growth and Sales Leader',
   },
-  interests: ['System Design', 'Cloud Computing (AWS)', 'Machine Learning'],
+  interests: ['Sales Leadership', 'Business Development', 'Financial Services', 'Customer Success', 'Marketing Automation', 'Revenue Growth'],
 };
 
 export const education = [
@@ -51,15 +51,19 @@ export const education = [
 
 export const experience = [
   {
-    company: 'Technical Hub Pvt Ltd',
-    role: 'Trainee',
-    place: 'Surampalem, AP',
-    period: 'May 2025 – June 2026',
-    points: [
-      'Completed one year of intensive Full-Stack Development (FSD) training covering frontend, backend, database integration, and deployment workflows.',
-      'Developed responsive and functional web applications by implementing user interfaces, server-side logic, and database connectivity.',
-      'Deployed and managed web applications while applying version control, debugging, and end-to-end development practices.',
-    ],
+    company: 'Insightra Medicals', role: 'Marketing Support', place: '', period: 'Aug 2012 – Nov 2016', points: [],
+  },
+  {
+    company: 'Vachana Investments', role: 'Marketing & General Manager', place: '', period: 'Nov 2016 – Jun 2019', points: [],
+  },
+  {
+    company: 'GEPL Capitals', role: 'Branch Manager', place: '', period: 'Jul 2019 – Feb 2020', points: [],
+  },
+  {
+    company: 'IndiaMART', role: 'Senior Account Manager', place: '', period: 'Feb 2020 – Nov 2022', points: [],
+  },
+  {
+    company: 'Vachana Investments', role: 'Chief Growth Officer', place: '', period: 'Nov 2022 – Present', points: [],
   },
 ];
 
@@ -239,116 +243,123 @@ export const certifications: Certification[] = [
 ];
 
 export type Skill = { name: string; mono: string; note?: string };
-export type SkillCategory = { id: string; title: string; subtitle: string; skills: Skill[] };
+export type SkillCategory = { id: string; title: string; subtitle: string; skills: Skill[]; priority?: boolean; domain?: boolean };
 
 export const skillCategories: SkillCategory[] = [
   {
-    id: 'languages',
-    title: 'Languages',
-    subtitle: 'Java is the primary language',
+    id: 'saas-technology-sales',
+    title: 'SaaS & Technology Sales',
+    subtitle: 'Complex B2B sales and pipeline leadership',
+    priority: true,
     skills: [
-      { name: 'Java', mono: 'Jv', note: 'Primary' },
-      { name: 'Python', mono: 'Py' },
-      { name: 'C', mono: 'C' },
-      { name: 'C++', mono: 'C+' },
+      { name: 'B2B SaaS Sales', mono: 'BS', note: 'Focus' },
+      { name: 'IT Services Sales', mono: 'IT' },
+      { name: 'Enterprise Sales', mono: 'ES' },
+      { name: 'Consultative Selling', mono: 'CS' },
+      { name: 'Solution Selling', mono: 'SS' },
+      { name: 'Business Development', mono: 'BD' },
+      { name: 'Account-Based Selling', mono: 'AB' },
+      { name: 'Pipeline Management', mono: 'PM' },
+      { name: 'Sales Forecasting', mono: 'SF' },
+      { name: 'Deal Negotiation', mono: 'DN' },
     ],
   },
   {
-    id: 'frontend',
-    title: 'Frontend',
-    subtitle: 'Interfaces & the web platform',
+    id: 'customer-success-account-management',
+    title: 'Customer Success & Account Management',
+    subtitle: 'Retention, renewals and strategic relationships',
+    priority: true,
     skills: [
-      { name: 'React', mono: 'Re' },
-      { name: 'HTML', mono: 'Ht' },
-      { name: 'CSS', mono: 'Cs' },
-      { name: 'JavaScript', mono: 'Js' },
+      { name: 'Customer Success Management', mono: 'CS', note: 'Focus' },
+      { name: 'Strategic Account Management', mono: 'SA' },
+      { name: 'Customer Retention', mono: 'CR' },
+      { name: 'Renewal Management', mono: 'RM' },
+      { name: 'Customer Lifetime Value', mono: 'CL' },
+      { name: 'CRM', mono: 'CR' },
+      { name: 'Customer Onboarding', mono: 'CO' },
+      { name: 'Customer Engagement', mono: 'CE' },
+      { name: 'Customer Health Monitoring', mono: 'CH' },
+      { name: 'Churn Prevention', mono: 'CP' },
     ],
   },
   {
-    id: 'backend',
-    title: 'Backend',
-    subtitle: 'Server-side logic',
+    id: 'revenue-growth-commercial-strategy',
+    title: 'Revenue Growth & Commercial Strategy',
+    subtitle: 'Revenue ownership and sustainable expansion',
+    priority: true,
     skills: [
-      { name: 'Node.js', mono: 'No' },
-      { name: 'Express.js', mono: 'Ex' },
+      { name: 'Revenue Ownership', mono: 'RO', note: 'Focus' },
+      { name: 'Revenue Operations', mono: 'RO' },
+      { name: 'Account Expansion', mono: 'AE' },
+      { name: 'Upselling', mono: 'UP' },
+      { name: 'Cross-selling', mono: 'CS' },
+      { name: 'Recurring Revenue Growth', mono: 'RR' },
+      { name: 'Net Revenue Retention', mono: 'NR' },
+      { name: 'Gross Revenue Retention', mono: 'GR' },
+      { name: 'Customer Expansion Revenue', mono: 'CE' },
+      { name: 'Go-to-Market Strategy', mono: 'GT' },
     ],
   },
   {
-    id: 'infra',
-    title: 'Infra & Tools',
-    subtitle: 'Shipping & architecture',
+    id: 'financial-services-fintech',
+    title: 'Financial Services & FinTech',
+    subtitle: 'Financial products, distribution and relationships',
+    domain: true,
     skills: [
-      { name: 'Docker', mono: 'Dk' },
-      { name: 'Docker Compose', mono: 'Dc' },
-      { name: 'REST APIs', mono: 'Ap' },
-      { name: 'Microservices', mono: 'Ms' },
-      { name: 'JWT Auth', mono: 'Jw' },
-      { name: 'Git / GitHub', mono: 'Gt' },
-      { name: 'Postman', mono: 'Pm' },
+      { name: 'Financial Services Sales', mono: 'FS' },
+      { name: 'Wealth Management Distribution', mono: 'WM' },
+      { name: 'Stockbroking Business Development', mono: 'SB' },
+      { name: 'AUM Growth', mono: 'AU' },
+      { name: 'Brokerage Revenue Growth', mono: 'BR' },
+      { name: 'Investment Product Distribution', mono: 'IP' },
+      { name: 'Financial Client Relationship Management', mono: 'FR' },
     ],
   },
   {
-    id: 'databases',
-    title: 'Databases',
-    subtitle: 'Indexing • Normalization',
+    id: 'growth-marketing-demand-generation',
+    title: 'Growth Marketing & Demand Generation',
+    subtitle: 'Acquisition, conversion and lifecycle marketing',
     skills: [
-      { name: 'PostgreSQL', mono: 'Pg' },
-      { name: 'MongoDB', mono: 'Mg' },
-      { name: 'MySQL', mono: 'My' },
+      { name: 'Performance Marketing', mono: 'PM' },
+      { name: 'Demand Generation', mono: 'DG' },
+      { name: 'Lead Generation', mono: 'LG' },
+      { name: 'Digital Marketing Strategy', mono: 'DM' },
+      { name: 'Paid Advertising', mono: 'PA' },
+      { name: 'Conversion Rate Optimization', mono: 'CR' },
+      { name: 'Landing Page Development', mono: 'LP' },
+      { name: 'Marketing Funnel Management', mono: 'MF' },
+      { name: 'Email Marketing', mono: 'EM' },
+      { name: 'Lifecycle Marketing', mono: 'LM' },
     ],
   },
   {
-    id: 'fundamentals',
-    title: 'CS Fundamentals',
-    subtitle: 'The foundations',
+    id: 'marketing-automation-sales-operations',
+    title: 'Marketing Automation & Sales Operations',
+    subtitle: 'Connected workflows and customer lifecycle operations',
     skills: [
-      { name: 'DSA', mono: 'Ds' },
-      { name: 'OS', mono: 'Os' },
-      { name: 'CN', mono: 'Cn' },
-      { name: 'DBMS', mono: 'Db' },
-      { name: 'OOPs', mono: 'Oo' },
-      { name: 'Collections', mono: 'Co' },
-      { name: 'Multithreading', mono: 'Mt' },
-    ],
-  },
-  {
-    id: 'interests',
-    title: 'Interests',
-    subtitle: 'Coming soon to the series',
-    skills: [
-      { name: 'System Design', mono: 'Sd' },
-      { name: 'Cloud Computing (AWS)', mono: 'Aw' },
-      { name: 'Machine Learning', mono: 'Ml' },
+      { name: 'Marketing Automation', mono: 'MA' },
+      { name: 'CRM Management', mono: 'CM' },
+      { name: 'Sales Automation', mono: 'SA' },
+      { name: 'Workflow Automation', mono: 'WA' },
+      { name: 'Lead Nurturing', mono: 'LN' },
+      { name: 'Sales Pipeline Management', mono: 'SP' },
+      { name: 'Customer Lifecycle Automation', mono: 'CL' },
+      { name: 'Pabbly Connect', mono: 'PC' },
+      { name: 'Razorpay', mono: 'RZ' },
+      { name: 'WhatsApp Business API', mono: 'WA' },
+      { name: 'Mailchimp', mono: 'MC' },
+      { name: 'Salesforce', mono: 'SF' },
     ],
   },
 ];
 
 /**
- * Factual cross-references shown when a skill card is hovered/tapped:
- * where the skill appears in the projects, certifications or achievements on the resume.
+ * Evidence can be added when Deepak provides approved examples for each specialty.
  */
 export const skillEvidence: Record<string, string[]> = {
-  Java: ['Oracle Java Certified Foundations Associate', 'HackerRank 5-star'],
-  Python: ['PolicyGuard AI', 'Cisco Python Essentials 1', 'HackerRank 5-star'],
-  C: ['HackerRank 5-star'],
-  React: ['Payment Gateway System', 'Multi-Tenant SaaS Platform'],
-  HTML: ['Pearson IT Specialist – HTML and CSS', 'Cisco HTML Essentials'],
-  CSS: ['Pearson IT Specialist – HTML and CSS', 'Cisco CSS Essentials'],
-  JavaScript: ['Cisco JavaScript Essentials 1 & 2'],
-  'Node.js': ['Payment Gateway System', 'Multi-Tenant SaaS Platform'],
-  'Express.js': ['Payment Gateway System'],
-  Docker: ['Payment Gateway System'],
-  'Docker Compose': ['Multi-Tenant SaaS Platform'],
-  'REST APIs': ['PolicyGuard AI'],
-  Microservices: ['Payment Gateway System'],
-  'JWT Auth': ['Multi-Tenant SaaS Platform'],
-  'Git / GitHub': ['GitHub Foundations'],
-  PostgreSQL: ['Payment Gateway System', 'Multi-Tenant SaaS Platform'],
-  MongoDB: ['MongoDB Certified Associate Developer'],
-  DBMS: ['NPTEL Database Management System', 'Oracle Database Foundations'],
-  DSA: ['AlgoUniversity Tech Fellow', '850+ problems solved'],
-  'Cloud Computing (AWS)': ['AWS Certified AI Practitioner', 'AWS Academy Cloud Foundations'],
-  'Machine Learning': ['B.Tech AI & ML', 'NPTEL Deep Learning'],
+  'B2B SaaS Sales': [],
+  'Customer Success Management': [],
+  'Revenue Ownership': [],
 };
 
 export type Episode = {
@@ -564,7 +575,7 @@ export const introSlides: IntroSlide[] = [
 ];
 
 export type ProfileId = 'sushmita' | 'recruiter' | 'developer' | 'creative';
-export type SectionId = 'about' | 'journey' | 'originals' | 'picks' | 'skills' | 'moments' | 'story';
+export type SectionId = 'about' | 'journey' | 'originals' | 'picks' | 'skills' | 'moments' | 'story' | 'certifications';
 
 export const viewerProfiles: {
   id: ProfileId;
@@ -604,11 +615,12 @@ export const viewerProfiles: {
 ];
 
 export const sectionMeta: Record<SectionId, { nav: string; card: string; meta: string; palette: Palette }> = {
-  about: { nav: 'About', card: 'About Me', meta: 'The Pilot • Education & training', palette: violet },
-  journey: { nav: 'Journey', card: 'My Journey', meta: `${seasons.length} Seasons • ${seasons.reduce((n, s) => n + s.episodes.length, 0)} Episodes`, palette: amber },
+  about: { nav: 'About', card: 'About Deepak', meta: 'Business growth and sales leadership', palette: violet },
+  journey: { nav: 'Experience', card: 'Career Experience', meta: `${experience.length} roles • 2012 to present`, palette: amber },
   originals: { nav: 'Originals', card: 'My Projects', meta: `${projects.length} Originals • 2026`, palette: crimson },
   picks: { nav: 'Top Picks', card: 'Top Picks', meta: 'Top 10 from the resume', palette: jade },
-  skills: { nav: 'Skills', card: 'My Skills', meta: `${skillCategories.length} Categories`, palette: ocean },
-  moments: { nav: 'Moments', card: 'My Achievements', meta: `${achievements.length} Moments • ${certifications.length} Certifications`, palette: crimson },
+  skills: { nav: 'Expertise', card: 'Areas of Expertise', meta: `${skillCategories.length} focus areas`, palette: ocean },
+  moments: { nav: 'Impact', card: 'Impact', meta: 'Selected achievements and credentials', palette: crimson },
   story: { nav: 'Resume', card: 'The Full Story', meta: 'Resume • View & download', palette: violet },
+  certifications: { nav: 'Certifications', card: 'Certifications & Professional Learning', meta: '32 credentials across four focus areas', palette: crimson },
 };

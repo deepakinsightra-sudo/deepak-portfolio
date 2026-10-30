@@ -2,8 +2,19 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { skillCategories, skillEvidence, type Skill } from '../data/portfolio';
 import { EASE, SectionHeading } from './fx';
+import { TechnologyLogoGrid } from './LogoSystem';
 
-const HUES = ['#ff3d5a', '#4cc9ff', '#46e3a8', '#ffb547', '#b98bff', '#ff8a5c', '#7ee0ff'];
+const HUES = ['#C51D48', '#B51C43', '#9B1A3B', '#A52A4A', '#843047', '#78152F'];
+const TARGET_OPPORTUNITIES = [
+  'SaaS Sales Leadership',
+  'IT Services Sales',
+  'Business Development',
+  'Customer Success Management',
+  'Strategic Account Management',
+  'Revenue Operations',
+  'Growth Marketing',
+  'Customer Retention and Renewal Management',
+];
 
 export default function Skills() {
   const [cat, setCat] = useState(0);
@@ -12,10 +23,22 @@ export default function Skills() {
 
   return (
     <>
-      <SectionHeading kicker="Genres" title="My Skill Universe" aside={<p className="max-w-xs text-sm text-mist">Hover or tap a skill to see where it shows up across projects and certifications.</p>} />
+      <SectionHeading kicker="Expertise" title="Leadership Expertise" aside={<p className="max-w-xs text-sm text-mist">Core strengths across SaaS sales, customer success, revenue growth and financial services.</p>} />
+
+      <div className="gutter mb-8 grid gap-4 rounded-xl border border-white/10 bg-ink-2/50 p-5 sm:p-6 lg:grid-cols-[190px_minmax(0,1fr)] lg:gap-8">
+        <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-crimson-2">Career positioning</p>
+        <div>
+          <p className="text-sm font-semibold leading-relaxed text-bone sm:text-base">
+            Sales &amp; Revenue Growth Leader <span className="text-crimson-2">|</span> SaaS &amp; IT Sales <span className="text-crimson-2">|</span> Customer Success <span className="text-crimson-2">|</span> Account Management <span className="text-crimson-2">|</span> Retention &amp; Renewals <span className="text-crimson-2">|</span> Marketing Automation
+          </p>
+          <p className="mt-3 text-xs leading-relaxed text-mist">
+            <span className="font-semibold text-bone/80">Target opportunities:</span> {TARGET_OPPORTUNITIES.join(' · ')}
+          </p>
+        </div>
+      </div>
 
       <div className="gutter grid gap-8 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-14">
-        {/* genre list */}
+        {/* expertise categories */}
         <div className="rail -mx-[var(--gutter)] flex gap-2 overflow-x-auto px-[var(--gutter)] lg:mx-0 lg:flex-col lg:gap-1 lg:overflow-visible lg:px-0" role="tablist" aria-label="Skill categories">
           {skillCategories.map((c, i) => (
             <button
@@ -24,11 +47,14 @@ export default function Skills() {
               role="tab"
               aria-selected={i === cat}
               onClick={() => setCat(i)}
-              className={`group relative shrink-0 rounded-lg px-4 py-3 text-left transition lg:px-5 ${i === cat ? 'text-bone' : 'text-smoke hover:text-bone'}`}
+              className={`group relative shrink-0 rounded-lg px-4 py-3 text-left transition lg:px-5 ${i === cat ? 'text-bone' : c.priority || c.domain ? 'text-bone/75 hover:text-bone' : 'text-smoke hover:text-bone'}`}
             >
               {i === cat && <motion.span layoutId="skill-tab" className="absolute inset-0 rounded-lg bg-white/[0.07] ring-1 ring-white/10" transition={{ duration: 0.45, ease: EASE }} />}
               {i === cat && <motion.span layoutId="skill-bar" className="absolute bottom-2 left-0 top-2 hidden w-[3px] rounded lg:block" style={{ background: hue }} />}
-              <span className="relative block font-display text-2xl tracking-wide lg:text-3xl">{c.title}</span>
+              <span className="relative flex items-center gap-2 font-display text-2xl tracking-wide lg:text-[1.7rem]">
+                {c.title}
+              {(c.priority || c.domain) && <span className="rounded-full border border-[#C51D48]/40 px-2 py-0.5 font-sans text-[8px] font-bold uppercase tracking-[0.16em] text-[#E5A0AE]">{c.priority ? 'Core' : 'Domain'}</span>}
+              </span>
               <span className="relative hidden text-xs text-smoke lg:block">
                 {c.skills.length} skills · {c.subtitle}
               </span>
@@ -46,7 +72,7 @@ export default function Skills() {
               >
                 <span className="font-semibold text-bone">{category.title}</span> — {category.subtitle}
               </motion.p>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
+              <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 xl:grid-cols-4">
                 {category.skills.map((s) => (
                   <SkillCard key={s.name} skill={s} hue={hue} />
                 ))}
@@ -55,13 +81,14 @@ export default function Skills() {
           </AnimatePresence>
         </div>
       </div>
+      <TechnologyLogoGrid />
     </>
   );
 }
 
 function SkillCard({ skill, hue }: { skill: Skill; hue: string }) {
   const [open, setOpen] = useState(false);
-  const evidence = skillEvidence[skill.name];
+  const evidence = skillEvidence[skill.name]?.filter(Boolean) ?? [];
 
   return (
     <motion.button
@@ -98,7 +125,7 @@ function SkillCard({ skill, hue }: { skill: Skill; hue: string }) {
         )}
       </span>
       <AnimatePresence initial={false}>
-        {open && evidence && (
+        {open && evidence.length > 0 && (
           <motion.span
             className="relative mt-2 block text-[11px] leading-snug text-mist"
             initial={{ opacity: 0, height: 0 }}

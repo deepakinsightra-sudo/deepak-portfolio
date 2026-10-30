@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
-import { education, experience, profile } from '../data/portfolio';
+import { experience, profile } from '../data/portfolio';
 import { EASE, SectionHeading, Tilt } from './fx';
 
 export default function About() {
   const facts = [
-    { k: 'Now', v: 'B.Tech, AI & ML', s: `${education[0].school} · ${education[0].score}` },
-    { k: 'Training', v: `${experience[0].role}, ${experience[0].company}`, s: experience[0].period },
-    { k: 'Primary language', v: 'Java', s: 'with Python, C, C++' },
-    { k: 'Based in', v: profile.location, s: 'India' },
+    { k: 'Current role', v: experience[experience.length - 1].role, s: experience[experience.length - 1].company },
+    { k: 'Career path', v: `${experience.length} roles`, s: `${experience[0].period.split(' – ')[0]} – Present` },
+    { k: 'Industry', v: 'Financial Services', s: 'Growth, sales and client leadership' },
+    { k: 'Focus', v: 'Revenue Growth', s: 'Business development and customer success' },
   ];
 
   return (
@@ -22,16 +22,14 @@ export default function About() {
           transition={{ duration: 1.2, ease: EASE }}
         >
         <Tilt max={5} className="rounded-2xl">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl ring-1 ring-white/10">
-            <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_30%,#5a0b1b,#14060a_60%,#07070a)]" />
-            <div className="absolute inset-0 opacity-50 [background-image:repeating-linear-gradient(90deg,rgba(255,255,255,0.03)_0px,rgba(255,255,255,0.03)_1px,transparent_1px,transparent_28px)]" />
+          <div className="relative aspect-[5/4] overflow-hidden rounded-2xl bg-ink ring-1 ring-white/10">
+            <div aria-hidden className="absolute inset-0 bg-[radial-gradient(72%_74%_at_50%_55%,rgba(120,21,47,0.4),rgba(43,9,20,0.2)_55%,transparent_78%)]" />
             <img
-              src="/assets/portrait-720.webp"
-              srcSet={profile.portrait.srcSet}
-              sizes="(max-width: 1024px) 90vw, 40vw"
+              src={profile.portrait.src}
               alt={profile.portrait.alt}
               loading="lazy"
-              className="absolute bottom-0 left-1/2 h-[92%] w-auto max-w-none -translate-x-1/2 object-contain object-bottom"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-contain object-bottom"
             />
             <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/90 to-transparent" />
             <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
@@ -39,7 +37,7 @@ export default function About() {
                 <p className="text-[10px] font-bold tracking-[0.3em] text-crimson-2">STARRING</p>
                 <p className="font-display text-3xl leading-none text-bone">{profile.displayName}</p>
               </div>
-              <span className="rounded border border-white/30 px-1.5 text-[10px] font-bold text-bone">S01–S05</span>
+              <span className="rounded border border-white/30 px-1.5 text-[10px] font-bold text-bone">GROWTH</span>
             </div>
           </div>
         </Tilt>
